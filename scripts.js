@@ -138,6 +138,16 @@ var colors = ["lightsalmon",
 "brown",
 "maroon"]
 
+
+var html = "<p> <img src='https://picsum.photos/200/300'/>"
+html += "<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </span>"
+html += "<span>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </span>"
+html += "<span>minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip </span>"
+html += "<span>ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </span>"
+html += "<span>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur </span>"
+html += "<span>sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</span>"
+html += "<span>mollit anim id est laborum. </span></p>"
+
 Array.prototype.random = function () {
   return this[Math.floor((Math.random()*this.length))];
 }
@@ -145,11 +155,13 @@ Array.prototype.random = function () {
 var addPannel = function() {
   var node = document.createElement("li");
   node.style.backgroundColor = colors.random();
-  console.log(window.innerHeight + "px");
-  node.style.height = window.innerHeight + "px"
+  node.innerHTML = html;
+  node.style.height = window.innerHeight + "px";
   document.getElementById("list").appendChild(node);
 }
 
 setInterval(function(){
   addPannel();
 }, 1000);
+
+addPannel(); // Run at launch
