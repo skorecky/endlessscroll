@@ -14,12 +14,13 @@ li {
   list-style: none;
   margin: 0;
   overflow: hidden;
-  padding:0;
+  padding:5rem 0;
   width: 100%;
 }
 
 li.head {
   background: #222;
+  padding: 1rem 0;
 }
 
 li h1 {
@@ -47,6 +48,6 @@ li p span {
 li p img {
   border-radius: 5px;
   float: left;
-  margin: 0 10px 10px 0;
-  width: 8rem;
+  margin: 0 20px 10px 0;
+  width: 50%;
 }

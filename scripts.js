@@ -138,14 +138,16 @@ var colors = ["lightsalmon",
 "maroon"]
 
 
-var html = "<p> <img src='https://picsum.photos/200/300'/>"
-html += "<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </span>"
-html += "<span>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </span>"
-html += "<span>minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip </span>"
-html += "<span>ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </span>"
-html += "<span>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur </span>"
-html += "<span>sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</span>"
-html += "<span>mollit anim id est laborum. </span></p>"
+var html = "<p> <img src='https://picsum.photos/400/400'/>"
+html += "<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
+html += "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
+html += "minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip"
+html += "ex ea commodo consequat. Duis aute irure dolor in reprehenderit in "
+html += "voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur "
+html += "sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt"
+html += "voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur "
+html += "sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt"
+html += "mollit anim id est laborum. proident, sunt in culpa qui officia des.</span></p>"
 
 Array.prototype.random = function () {
   return this[Math.floor((Math.random()*this.length))];
@@ -155,12 +157,16 @@ var addPannel = function() {
   var node = document.createElement("li");
   node.style.backgroundColor = colors.random();
   node.innerHTML = html;
-  node.style.height = window.innerHeight + "px";
+  // node.style.height = window.innerHeight + "px";
   document.getElementById("list").appendChild(node);
 }
 
+var init = function() {
+  addPannel();
+};
+
 setInterval(function(){
   addPannel();
-}, 1000);
+}, 500);
 
-addPannel(); // Run at launch
+ init(); // Run at launch
